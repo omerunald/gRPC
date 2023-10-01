@@ -1,6 +1,8 @@
 using Grpc.Core;
+using GrpcServer.DataLibrary;
 using Microsoft.Extensions.Logging;
 using MyGRPC;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GrpcServer.Services
@@ -20,5 +22,28 @@ namespace GrpcServer.Services
                 Message = "Hello " + request.Name
             });
         }
+
+        //public override async Task<List<MovieResponseModel>> GetMoviesList(MoviewRequestModel request, ServerCallContext context)
+        //{
+        //    MoviesDataLibrary moviesDataLibrary = new MoviesDataLibrary();
+        //    var liste = moviesDataLibrary.GetList();
+        //    List<MovieResponseModel> responseModels = new List<MovieResponseModel>();
+
+        //    foreach (var item in liste)
+        //    {
+        //        var movieResponse = new MovieResponseModel
+        //        {
+        //            CategoryId = item.CategoryId,
+        //            Code = item.Code,
+        //            Description = item.Description,
+        //            Id = item.Id,
+        //            Rating = item.Rating,
+
+        //        };
+        //        responseModels.Add(movieResponse);
+        //    }
+
+        //    return responseModels;
+        //}
     }
 }

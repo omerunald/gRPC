@@ -11,6 +11,9 @@ service Movies{
 	rpc GetMovies(google.protobuf.Empty) returns (stream MovieListModel);
 	rpc SetMovies(stream MoviewRequestModel) returns (MovieListModel);
 	rpc SetGetMovies(stream MoviewRequestModel) returns (stream MovieResponseModel);
+	rpc GetMoviesList(google.protobuf.Empty) returns (stream MovieResponseModel);
+	rpc GetMoviesRangeList(google.protobuf.Empty) returns (stream MovieListModel);
+
 }
 
 message MoviewRequestModel{

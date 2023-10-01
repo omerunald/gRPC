@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option csharp_namespace = "MyGRPC";
+
+package test;
+
+// The greeting service definition.
+//service test {
+//  // Sends a greeting
+//	rpc GetMoviesList(MoviewRequestModel) returns (stream MovieResponseModel);
+//}
+//
+//message MoviewRequestModel{
+//	int32 id = 1;
+//}
+//
+//message MovieListModel {
+//  repeated MovieResponseModel movies = 1;
+//}
+//
+//message MovieResponseModel{
+//	int32  id = 1 ;
+//	int32 categoryId =2;
+//	string code =3;
+//	string description =4;
+//	int64 rating = 5;
+//}
+
+
+service Movies{	
+	rpc GetMoviesList(MoviewRequestModel) returns (stream MovieResponseModel);
+}
+
+message MoviewRequestModel{
+	int32 id = 1;
+}
+
+message MovieListModel {
+  repeated MovieResponseModel movies = 1;
+}
+
+message MovieResponseModel{
+	int32  id = 1 ;
+	int32 categoryId =2;
+	string code =3;
+	string description =4;
+	int64 rating = 5;
+}
